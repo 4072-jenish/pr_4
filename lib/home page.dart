@@ -30,26 +30,29 @@ class homepage extends StatelessWidget {
             width: 15,
           ),
         ],
-        backgroundColor: Color(0xffDFE3FC),
+        backgroundColor: const Color(0xffDFE3FC),
       ),
       body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
+        scrollDirection: Axis.horizontal,
+        child: Row(
           children: [
             ...allproducts
             .map(
               (e) =>  Container(
-          child: 
-               Column(
+                height: 200,
+                width: 200,
+          child : 
+              Text("Buisness Type"),
+           Row(
               children: [
                  Align(
                   alignment: Alignment.center,
                child: CircleAvatar(
-                  radius: 100,
+                  radius: 90,
                   backgroundColor: Colors.black,
                   child: CircleAvatar(
-                    radius: 90,
-                    backgroundImage: NetworkImage("${e['id']}"),
+                    radius: 85,
+                    backgroundImage: NetworkImage("${e['thumbnail']}"),
                   ),
                 ),
                 ),
@@ -62,7 +65,7 @@ class homepage extends StatelessWidget {
                       
                     ),   
                   ),
-                 )),
+                 ),),
                 Expanded(
                     flex: 1,
                     child: Container(
@@ -85,13 +88,7 @@ class homepage extends StatelessWidget {
                                 fontWeight: FontWeight.w900,
                               ),
                             ),
-                            Text(
-                              " For Fevrite ",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
+                           
                       ],
                     ),
                   ),
